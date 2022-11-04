@@ -1,0 +1,27 @@
+Parameters:
+  # Name of the lambda function
+  lambda_name: lambda_name
+  # The size of the function /tmp directory in MB. 
+  # The default value is 512, but can be any whole number between 512 and 10240 MB.
+  storage: 512
+  # The amount of memory available to the function at runtime. 
+  # Increasing the function memory also increases its CPU allocation. 
+  # The default value is 128 MB. The value can be any multiple of 1 MB.
+  memory: 128
+  # The amount of time (in seconds) that Lambda allows a function to run before stopping it. 
+  # The default is 3 seconds. The maximum allowed value is 900 seconds.
+  timeout: 3
+  # The Amazon Resource Name (ARN) of the function's execution role.
+  execution_role_arn: arn:aws:iam::377627555096:role/GovernedLambdaDefaultExecutionRole
+# Define environment variables to be used by the lambda function
+EnvironmentVariables:
+  dev:
+    ENV: dev
+  prod:
+    ENV: prod
+# Define tags to be associated with the lambda function
+Tags:
+  dev:
+    ENV: dev
+  prod:
+    ENV: prod
